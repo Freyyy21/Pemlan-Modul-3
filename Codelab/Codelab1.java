@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Codelab1 {
 
     public static void main(String[] args) {
-        //Menghitung luas persegi panjang
+        //Program untuk Menghitung luas persegi panjang
 
         double panjang;
         double lebar;
