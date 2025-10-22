@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Codelab2 {
     public static void main(String[] args) {
+        //tes
         Scanner ipt = new Scanner(System.in);
 
         System.out.print("Masukkan nama: ");
