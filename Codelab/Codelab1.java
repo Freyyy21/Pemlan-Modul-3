@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class Codelab1 {
 
+
     public static void main(String[] args) {
         //Program Menghitung luas persegi panjang
+        //Test Commit
 
         double panjang;
         double lebar;
