@@ -1,36 +1,57 @@
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Codelab1 {
-
-
     public static void main(String[] args) {
-        //Program Menghitung luas persegi panjang
-        //Test Commit
+        Scanner ipt = new Scanner(System.in);
 
-        double panjang;
-        double lebar;
+        System.out.print("Masukkan nama: ");
+        String name = ipt.nextLine();
 
-        Scanner input = new Scanner(System.in);
-
-        while (true) {
-            try {
-                System.out.print("Masukkan panjang: ");
-                panjang = input.nextDouble();
-                System.out.print("Masukkan lebar: ");
-                lebar = input.nextDouble();
-                double luas = panjang * lebar;
-                System.out.println("Luas dari persegi panjang " + panjang + " x " + lebar + " adalah " + luas);
-                break;
-
-            } catch (InputMismatchException e) {
-                System.out.println("Input tidak valid!");
-                input.nextLine();
+        String gender = "";
+        while (true){
+            System.out.print("Masukkan jenis kelamin (P/L): ");
+            String iptGender = ipt.nextLine();
+            if (iptGender.length() == 1) {
+                char genderChar = iptGender.charAt(0);
+                char male = 'l';
+                char female = 'p';
+                if (Character.toLowerCase(genderChar) == male || Character.toLowerCase(genderChar) == female) {
+                    if (Character.toLowerCase(genderChar) == male) {
+                        gender = "Laki-Laki";
+                    } else {
+                        gender = "Perempuan";
+                    }
+                    break;
+                }
+            } else {
+                System.out.println("Input tidak valid! Silahkan coba lagi");
             }
-
         }
 
+        int birth = 0;
+        while (true) {
+            System.out.print("Masukkan tahun lahir: ");
+            try {
+                birth = ipt.nextInt();
+                ipt.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Input tidak valid! Coba lagi.");
+                ipt.nextLine();
+            }
+        }
 
-        input.close();
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+        int birthYear = currentYear - birth;
+
+        System.out.println("\nData diri:");
+        System.out.println("Nama: " + name);
+        System.out.println("Jenis kelamin: " + gender);
+        System.out.println("Umur: " + birthYear);
+
+        ipt.close();
     }
 }
