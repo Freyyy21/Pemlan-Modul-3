@@ -6,4 +6,6 @@ public interface Operational {
     void displayEstimatedDuration();
 
     void displayRoute();
+
+    void displayPrice();
 }

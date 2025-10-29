@@ -15,6 +15,7 @@ public class Nota {
             total += p.hitungSubtotal();
         }
         return total;
+
     }
 
     public void cetakNota() {
@@ -24,5 +25,7 @@ public class Nota {
         }
         System.out.println("---------------------------");
         System.out.println("TOTAL: Rp" + hitungTotal());
+
     }
+
 }
